@@ -1,6 +1,6 @@
 const apple = 15.678, lychee = 123.965, banana = 90.2345;
 
-console.log(apple, lychee, banana);
+console.log(`Яблоки - ${apple} грн., личи - ${lychee} грн., бананчики ${banana}грн.`);
 
 //1. Використовуючи вбудований об'єкт Math – виведіть максимальне число
 console.log (`Максимальное число: ${Math.max(apple, lychee, banana)}`);
@@ -45,8 +45,8 @@ let discountPrice = Math.round(fruitPriceSum*(1 -(randomDiscount*0.01))*100)/100
 let netProfit = discountPrice-(fruitPriceSum/2);
 console.log (`Случайная скидка составит: ${randomDiscount} %. Клиент заплатит: ${discountPrice} грн. Чистая прибыль составит: ${netProfit} грн.`);
 
-console.log (`1. Максимальное число: ${Math.max(apple, lychee, banana)}
-2. Минимальное число: ${Math.min(apple, lychee, banana)}
+console.log (`1. Максимальная цена: ${Math.max(apple, lychee, banana)}
+2. Минимальная цена: ${Math.min(apple, lychee, banana)}
 3. Стоимость всех товаров: ${fruitPriceSum}
 4. Cумма стоимости каждого товара без дробной части: ${appleWithoutFractional + lycheeWithoutFractional + nutsWithoutFractional}
 5. Сумма товаров, округленная до сотен: ${roundToHundredths}
