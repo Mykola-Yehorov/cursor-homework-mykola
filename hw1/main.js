@@ -1,6 +1,6 @@
 const apple = 15.678, lychee = 123.965, banana = 90.2345;
 
-console.log(`Яблоки - ${apple} грн., личи - ${lychee} грн., бананчики - ${banana}грн.`);
+console.log(`Яблоки - ${apple} грн., личи - ${lychee} грн., бананчики - ${banana} грн.`);
 
 //1. Використовуючи вбудований об'єкт Math – виведіть максимальне число
 console.log (`Максимальное число: ${Math.max(apple, lychee, banana)}`);
