@@ -31,8 +31,8 @@ console.log (`Сумма товаров, округленная до сотен:
 
 //6. Виведіть булеве значення: чи є сума всіх товарів (округлена в меншу сторону) парним чи непарним числом?
 let amountRoundedDown = Math.floor(fruitPriceSum);
-let parityValue = (amountRoundedDown % 2 == 0) ? `Сумма товаров является четным числом: ${amountRoundedDown}` : `Сумма товаров является нечетным числом: ${amountRoundedDown}`;
-console.log (parityValue);
+let parityValueAnswer = amountRoundedDown % 2 === 0;
+console.log (`Четность числа ${amountRoundedDown}: ${parityValueAnswer}`);
 
 //7. Виведіть суму решти, при оплаті всіх товарів (без округлення), якщо клієнт платить 500 грн.
 let restAmount = 500 - fruitPriceSum;
@@ -53,7 +53,7 @@ console.log (`1. Максимальное число: ${maxPrice}
 3. Стоимость всех товаров: ${fruitPriceSum}
 4. Cумма стоимости каждого товара без дробной части: ${sumPriceWithoutFractional}
 5. Сумма товаров, округленная до сотен: ${roundToHundredths}
-6. ${parityValue}
+6. Четность числа ${amountRoundedDown}: ${parityValueAnswer}
 7. Сумма сдачи, при оплате всех товаров с 500 грн: ${restAmount}
 8. Среднее значение цен, округленное до второго знака после запятой: ${averageValue}
 9. Случайная скидка составит: ${randomDiscount}%. Клиент заплатит: ${discountPrice} грн. Чистая прибыль составит: ${netProfit} грн.
