@@ -1,0 +1,13 @@
+.content{
+    text-align: center;
+}
+
+.content__items{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 15px;
+}
+
+.content__item img{
+    width:150px;
+}
