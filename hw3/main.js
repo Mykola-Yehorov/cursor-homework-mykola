@@ -1,14 +1,7 @@
 
 //1. Створити функцію getMaxDigit(number) – яка отримує будь-яке число та виводить найбільшу цифру в цьому числі.
-function getMaxDigit(number){    
-  const stringFromNumbers = Array.from(String(number));
-  for (let i = 0; i < stringFromNumbers.length; i++){
-    stringFromNumbers[i] = Number (stringFromNumbers[i]);    
-  }     
-  const maxNumber = Math.max(...stringFromNumbers); 
-  return maxNumber;
-}
-console.log (`Максимальна цифра в числі 5830 становить ${getMaxDigit(5830)}`);
+  const getMaxDigit = (number) => Math.max(... Array.from(String(number)).map((item) => parseInt(item)))
+console.log (`Максимальна цифра в числі 5830 становить: ${getMaxDigit(5830)}`);
 
 //2. Створити функцію, яка визначає ступінь числа
 function powerNumber(number, power){
@@ -60,13 +53,11 @@ function convertCurrency(money){
   let amountMoney=0;
   if (UpperCaseMoney.includes('UAH'))
   {
-    amountMoney = UpperCaseMoney.replace('UAH', '');
-    amountMoney = Number(amountMoney);
+    amountMoney = Number(UpperCaseMoney.replace('UAH', ''));
   }
   else if (UpperCaseMoney.includes('$'))
   {
-    amountMoney = UpperCaseMoney.replace('$', '');
-    amountMoney = Number(amountMoney);
+    amountMoney = Number(UpperCaseMoney.replace('$', ''));
   }
   else console.error("Помилка! Зазначена валюта не конвертується даною функцією");
   let convertResultRoundes = 0;
@@ -110,13 +101,9 @@ console.log (`Видалили всі букви 0 з слова "молоко":
 //10. Створіть функцію, яка перевіряє, чи є слово паліндромом
 function isPalyndrom(word){
   const reverseWord = word.toLowerCase().split('').reverse().join('');
-  //const isPalyndromAnswer = "";
-  if (word.toLowerCase() == reverseWord)
-    return (`${word} є паліндромом`)
-  else
-    return (`${word} не є паліндромом`) 
+ return (word.toLowerCase() == reverseWord);
 }
-console.log (`Слово ${isPalyndrom("Дід")}`);
+console.log (`Чи є слово Дід паліндромом? ${isPalyndrom("Дід")}`);
 
 
 //11. Створіть функцію, яка видалить з речення букви, які зустрічаються більше 1 разу 
