@@ -48,7 +48,7 @@ console.log("3. Зіставте оцінки зі студентом: ", addStu
 function getRandomMarks() {
   let randomMarks = [];
   for (let i = 0; i < addStudentsProjects().length; i++) {
-    const marks = Math.round(Math.random() * (5 - 1 + 1) + 1);
+    const marks = Math.floor(Math.random() * (5 - 1 + 1) + 1);
     randomMarks.push([addStudentsProjects()[i].concat(marks)]);
   }
   return randomMarks;
