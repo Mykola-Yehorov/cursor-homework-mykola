@@ -35,7 +35,7 @@ function getMedian(...numbers) {
     return a - b;
   });
   if (integers.length % 2 === 0) {
-    median = (integers[integers.length / 2 - 1] + integers[integers.length / 2]) / 2;
+    median = (integers[integers.length / 2 - 1] + arr[integers.length / 2]) / 2;
   } else {
     median = integers[(integers.length - 1) / 2];
   }
