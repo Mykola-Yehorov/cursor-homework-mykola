@@ -1,69 +1,113 @@
-//1. Створіть функцію,  яка повертає масив випадкових цілих чисел. У функції є параметри: length - довжина масиву, min – мінімальне значення цілого числа, max – максимальне значення цілого числа
-function getRandomArray(length, min, max) {
-  let randomArray = [];
-  for (let i = 0; i < length; i++) {
-    randomArray.push(Math.floor(Math.random() * (max - min + min) + min));
+const students = [{
+  name: "Tanya",
+  course: 3,
+  subjects: {
+    math: [4, 4, 3, 4],
+    algorithms: [3, 3, 3, 4, 4, 4],
+    data_science: [5, 5, 3, 4]
   }
-  return `Масив випадкових цілих чисел з довжиною: ${length} елементів, мінімальним елементом: ${min}, максимальним елементом ${max} виглядає наступним чином: ${randomArray}`;
-}
-console.log(getRandomArray(5, 1, 10));
+}, {
+  name: "Victor",
+  course: 4,
+  subjects: {
+    physics: [5, 5, 5, 3],
+    economics: [2, 3, 3, 3, 3, 5],
+    geometry: [5, 5, 2, 3, 5]
+  }
+}, {
+  name: "Anton",
+  course: 2,
+  subjects: {
+    statistics: [4, 5, 5, 5, 5, 3, 4, 3, 4, 5],
+    english: [5, 3],
+    cosmology: [5, 5, 5, 5]
+  }
+}];
 
-//3. Створіть функцію,  яка рахує середнє арифметичне всіх переданих в неї аргументів.
 
+//Функція,  яка рахує середнє арифметичне всіх переданих в неї аргументів та округлює значення до сотих
 function getAverage(...numbers) {
-  const integers = Array.from(numbers).filter((number) =>
-    Number.isInteger(number)
-  );
   let numbersSum = 0;
-  for (let i = 0; i < integers.length; i++) {
-    numbersSum = numbersSum + integers[i];
+  for (let i = 0; i < numbers.length; i++) {
+    numbersSum = numbersSum + numbers[i];
   }
-  const numberAverage = numbersSum / integers.length;
-  return `Середнє арифметичне переданих елементів (враховуємо тільки цілі числа): ${numbers} складає: ${numberAverage} `;
+  const numberAverage = numbersSum / numbers.length; 
+  const roundNumberAverage =  Math.round(numberAverage * 100) / 100;
+  return roundNumberAverage;
 }
-console.log(getAverage(1, 2, 3, 0.25));
 
-//4. Створіть функцію, яка рахує медіану всіх переданих в неї аргументів.
+//1. Створіть функцію, яка повертає список предметів для конкретного студента
+function getSubjects(students){
+  let subjectsArr = [];
+  subjectsArr = (Object.keys(students.subjects));
+  subjectsArr = subjectsArr.map(item => item[0].toUpperCase() + item.slice(1).toLowerCase());
+  subjectsArr = subjectsArr.map(item => item.replace('_', ' '));
+return subjectsArr
+};
+console.log ('Створіть функцію, яка повертає список предметів для конкретного студента. Студент №1:', getSubjects(students[0]));
 
-function getMedian(...numbers) {
-  const integers = Array.from(numbers).filter((number) =>
-    Number.isInteger(number)
-  );
-  let median = 0;
-  //const elementsHalf = Math.trunc (integers.length / 2);
-  integers.sort((a, b) => {
-    return a - b;
+
+//2. Створіть функцію, яка поверне середню оцінку по усім предметам для переданого студента
+let averageAllMarks =[]
+function getAverageMark(student){
+  let subjectsMarks = (Object.values(student.subjects));
+ /* averageAllMarks = subjectsMarks.map(function(item) {
+    return getAverage(...item)
+  });*/
+  averageAllMarks = subjectsMarks.map(item => getAverage(...item));
+  return getAverage(...averageAllMarks);
+}
+console.log ('Створіть функцію, яка поверне середню оцінку по усім предметам для переданого студента. Студент №2:', getAverageMark(students[1]));
+
+
+//3. Створіть функцію, яка повертає інформацію загального виду по переданому студенту (вам знадобиться функція з попереднього завдання). повинна бути виведена інформація: курс, ім'я, середня оцінка.
+function getStudentInfo(student){
+  const studentInfo = {
+    course: student.course,
+    name: student.name,
+    averageMark: getAverageMark(student)
+  }
+  return studentInfo;
+}
+console.log ('Створіть функцію, яка поверне середню оцінку по усім предметам для переданого студента. Студент №2:', getStudentInfo(students[1]));
+//console.log (Object.entries(students));
+
+//4. Створіть функцію, яка повертає імена студентів у алфавітному порядку.
+
+function getStudentsNames(students){
+  let namesArr = [];
+  students.forEach(stusent => {
+    let stusentName = stusent.name;  
+    namesArr.push(stusentName);
   });
-  if (integers.length % 2 === 0) {
-    median = (integers[integers.length / 2 - 1] + arr[integers.length / 2]) / 2;
-  } else {
-    median = integers[(integers.length - 1) / 2];
+  const sortedNames = namesArr.sort();
+  return sortedNames;
+}
+console.log ('Створіть функцію, яка повертає імена студентів у алфавітному порядку:', getStudentsNames(students));
+
+//5. Створіть функцію, яка повертає кращого студента зі списку по показнику середньої оцінки.
+function getBestStudent(students){
+  const maxMark = Math.max(...averageAllMarks);
+  const bestStudent = [];
+  for (let i=0; i<students.length; i++){
+    if (maxMark === averageAllMarks[i]) {
+      bestStudent.push(students[i].name);
   }
-  return `З переданих елементів (враховуємо тільки цілі числа): ${numbers} медіаною є: ${median} `;
+  }
+  return bestStudent;
 }
-console.log(getMedian(11, 9, 3, 5, 5));
+console.log ('Створіть функцію, яка повертає кращого студента зі списку по показнику середньої оцінки:', getBestStudent (students));
 
-//5. Створіть функцію,  яка фільтрує парні числа передані як аргументи функції.
-function filterEvenNumbers(...numbers) {
-  const evenNumbers = Array.from(numbers).filter((number) => number % 2 == 1);
-  return `Передали елементи: ${numbers} та профільтрували парні числа. Отримали: ${evenNumbers} `;
-}
-console.log(filterEvenNumbers(1, 2, 3, 4, 5, 6));
 
-//6. Створіть функцію,  яка порахує кількість чисел більших 0
-function countPositiveNumbers(...numbers) {
-  const positiveNumbers = Array.from(numbers).filter(
-    (number) => number > 0
-  ).length;
-  return `Передали елементи: ${numbers},  кількість чисел більших 0: ${positiveNumbers} `;
-}
-console.log(countPositiveNumbers(-1, 1, 2, 0));
+6. //Створіть функцію, яка повертає об'єкт, в якому ключі це букви у слові, а значення – кількість їх повторень
 
-//7. Створіть функцію,  яка відфільтрує усі елементи в масиві та залишить тільки ті, які діляться на ціло на 5.
-function getDividedByFive(...numbers) {
-  const dividedByFive = Array.from(numbers).filter((number) => number % 5 == 0);
-  return `Передали елементи: ${numbers}, выдфыльтрували елементи в масиві та залишили ті, які діляться на ціло на 5: ${dividedByFive} `;
+function calculateWordLetters(word){
+  const lettersArr = word.split("")
+  const lettersResult = lettersArr.reduce((letterСount, letter) => {
+  if (letterСount[letter]) letterСount[letter] = letterСount[letter] + 1;
+  else letterСount[letter] = 1;
+  return letterСount;
+}, {}); 
+  return lettersResult;
 }
-console.log(
-  getDividedByFive(6, 2, 30, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2)
-);
+console.log ("Створіть функцію, яка повертає об'єкт, в якому ключі це букви у слові, а значення – кількість їх повторень. Слово 'молоко':", calculateWordLetters("молоко"));
