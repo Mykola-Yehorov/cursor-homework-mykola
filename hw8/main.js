@@ -20,7 +20,7 @@ class Student {
     this.isDismissed = false;
   }
   getInfo() {
-    return `Студент ${this.course}го курсу ${this.university}, ${this.university}`;
+    return `Студент ${this.course}го курсу ${this.university}, ${this.fullName}`;
   }
 
   get getMarks() {
