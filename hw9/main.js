@@ -3,10 +3,10 @@ function generateBlocks(quantity){
 
   let box__wrapper = document.querySelector('.box__wrapper');
   function randomColor() {
-    const r = Math.floor (Math.random() * (255 + 1 - 0));
-    const g = Math.floor (Math.random() * (255 + 1 - 0));
-    const b = Math.floor (Math.random() * (255 + 1 - 0));
-    return `rgb(${r}, ${g}, ${b})`;
+    const red = Math.floor (Math.random() * (255 + 1 - 0));
+    const green = Math.floor (Math.random() * (255 + 1 - 0));
+    const blue = Math.floor (Math.random() * (255 + 1 - 0));
+    return `rgb(${red}, ${green}, ${blue})`;
   }
 
   for (i=0; i<quantity; i++){
