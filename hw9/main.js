@@ -1,3 +1,6 @@
+function randomColor(selector){
+  return selector.style.backgroundColor = randomColor();
+}
 
 function generateBlocks(quantity){
 
@@ -14,11 +17,9 @@ function generateBlocks(quantity){
     box.style.width = 50 + 'px';
     box.style.height = 50 + 'px';
     setInterval(() =>{
-      box.style.backgroundColor = randomColor();
+      randomColor (box);
     }, 1000);
     box__wrapper.append(box);
   }
 }
-
 generateBlocks(25);
-
