@@ -1,25 +1,32 @@
-function randomColor(selector){
-  return selector.style.backgroundColor = randomColor();
+function randomColor() {
+  const red = Math.floor(Math.random() * (255 + 1 - 0));
+  const green = Math.floor(Math.random() * (255 + 1 - 0));
+  const blue = Math.floor(Math.random() * (255 + 1 - 0));
+  return `rgb(${red}, ${green}, ${blue})`;
 }
 
-function generateBlocks(quantity){
+function changeColor(box){  
+  let box__wrapper = document.querySelector(".box__wrapper");
+  box.style.backgroundColor = randomColor();
+}
 
-  let box__wrapper = document.querySelector('.box__wrapper');
-  function randomColor() {
-    const red = Math.floor (Math.random() * (255 + 1 - 0));
-    const green = Math.floor (Math.random() * (255 + 1 - 0));
-    const blue = Math.floor (Math.random() * (255 + 1 - 0));
-    return `rgb(${red}, ${green}, ${blue})`;
-  }
-
-  for (i=0; i<quantity; i++){
+function generateBlocks(quantity) {
+  let box__wrapper = document.querySelector(".box__wrapper");
+  for (i = 0; i < quantity; i++) {    
     const box = document.createElement("div");
-    box.style.width = 50 + 'px';
-    box.style.height = 50 + 'px';
-    setInterval(() =>{
-      randomColor (box);
-    }, 1000);
+    box.style.width = 50 + "px";
+    box.style.height = 50 + "px";
+    box.style.backgroundColor = randomColor();
     box__wrapper.append(box);
   }
 }
 generateBlocks(25);
+
+function generateBlocksInterval(quantity) {
+  const box = generateBlocks(quantity);
+  setInterval(() => {
+      changeColor(box);
+  }, 1000);
+}
+
+generateBlocksInterval(25);
