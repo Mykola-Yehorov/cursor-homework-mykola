@@ -24,7 +24,7 @@ itemThree.addEventListener('click', function(e) {
   console.log (333);
   e.stopPropagation();
 });
-*/
+
 
 const list = document.querySelector('ul');
 
@@ -32,4 +32,19 @@ list.addEventListener('click', e => {
   if(e.traget.tagName === "LI"){
     e.traget.innerHTML = e.traget.innerHTML ** 2
   }
+})*/
+
+const list = document.querySelector('ul');
+const addLi = document.querySelector('#add-bumber');
+
+list.addEventListener('click', e => {
+  if (e.target.closest("li")){
+    e.target.inerrHTML = e.traget.innerHTML ** 2;
+  }
+})
+
+addLi.addEventListener('click', function(){
+  let li = document.createElement('li');
+  li.innerHTML = "<input>";
+  list.appendChild(li);
 })
