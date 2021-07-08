@@ -1,25 +1,35 @@
-function randomColor(selector){
-  return selector.style.backgroundColor = randomColor();
+/*function helloTeam(){
+  console.log('Hello Team')
 }
+*/
+//document.querySelector('#myClick').onclick = helloTeam;
+//document.querySelector('#myClick').addEventListener('click', helloTeam);
 
-function generateBlocks(quantity){
+/*
+const itemOne = document.querySelector('.item-one');
+const itemTwo = document.querySelector('.item-two');
+const itemThree = document.querySelector('.item-three');
 
-  let box__wrapper = document.querySelector('.box__wrapper');
-  function randomColor() {
-    const red = Math.floor (Math.random() * (255 + 1 - 0));
-    const green = Math.floor (Math.random() * (255 + 1 - 0));
-    const blue = Math.floor (Math.random() * (255 + 1 - 0));
-    return `rgb(${red}, ${green}, ${blue})`;
+itemOne.addEventListener('click', function(e) {
+  console.log (111);
+  e.stopPropagation();
+});
+
+itemTwo.addEventListener('click', function(e) {
+  console.log (222);
+  e.stopPropagation();
+});
+
+itemThree.addEventListener('click', function(e) {
+  console.log (333);
+  e.stopPropagation();
+});
+*/
+
+const list = document.querySelector('ul');
+
+list.addEventListener('click', e => {
+  if(e.traget.tagName === "LI"){
+    e.traget.innerHTML = e.traget.innerHTML ** 2
   }
-
-  for (i=0; i<quantity; i++){
-    const box = document.createElement("div");
-    box.style.width = 50 + 'px';
-    box.style.height = 50 + 'px';
-    setInterval(() =>{
-      randomColor (box);
-    }, 1000);
-    box__wrapper.append(box);
-  }
-}
-generateBlocks(25);
+})
