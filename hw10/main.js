@@ -1,4 +1,5 @@
 function gammaPlay(event) {
+  //button.classList.remove('active');
   const audio = document.querySelector(`audio[data-key="${event.keyCode}"]`);
   const button = document.querySelector(`.button[data-key="${event.keyCode}"]`);
   audio.play();
@@ -12,8 +13,13 @@ buttons.forEach((button) => {
     const audio = document.querySelector(
       `audio[data-key="${button.dataset.key}"]`
     );
-    audio.play();
-    button.classList.add('active');
+    if (button.addEventListener('keydown', button.dataset.key) != button.dataset.key){
+      audio.stop();
+    }
+    else{
+      audio.play();
+      button.classList.add('active');
+    }
   };
 });
 
