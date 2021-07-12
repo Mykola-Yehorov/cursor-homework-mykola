@@ -1,5 +1,5 @@
 function gammaPlay(event) {
-  //button.classList.remove('active');
+  
   const audio = document.querySelector(`audio[data-key="${event.keyCode}"]`);
   const button = document.querySelector(`.button[data-key="${event.keyCode}"]`);
   audio.play();
@@ -15,6 +15,7 @@ buttons.forEach((button) => {
     );
     if (button.addEventListener('keydown', button.dataset.key) != button.dataset.key){
       audio.stop();
+      button.classList.remove('active');
     }
     else{
       audio.play();
