@@ -1,4 +1,4 @@
-let sumNumber = 0;
+let sumNumber = 1;
 let n = +Math.trunc(
   prompt("Введіть число (n) від якого ми будемо складати", 1)
 );
