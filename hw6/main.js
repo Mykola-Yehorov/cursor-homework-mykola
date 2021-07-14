@@ -41,13 +41,12 @@ function getAverage(...numbers) {
 
 //1. Створіть функцію, яка повертає список предметів для конкретного студента
 function getSubjects(students) {
-  let subjectsArr = [];
-  subjectsArr = Object.keys(students.subjects);
-  subjectsArr = subjectsArr.map(
+  const subjectsArr = Object.keys(students.subjects);
+  const newArr = subjectsArr.map(
     (item) => item[0].toUpperCase() + item.slice(1).toLowerCase()
   );
-  subjectsArr = subjectsArr.map((item) => item.replace("_", " "));
-  return subjectsArr;
+  const resultArr = newArr.map((item) => item.replace("_", " "));
+  return resultArr;
 }
 console.log(
   "Створіть функцію, яка повертає список предметів для конкретного студента. Студент №1:",
@@ -55,17 +54,16 @@ console.log(
 );
 
 //2. Створіть функцію, яка поверне середню оцінку по усім предметам для переданого студента
-let averageAllMarks = [];
 function getAverageMark(student) {
   let subjectsMarks = Object.values(student.subjects);
-  averageAllMarks = subjectsMarks.map((item) => getAverage(...item));
+  const averageAllMarks = subjectsMarks.map((item) => getAverage(...item));
   return getAverage(...averageAllMarks);
 }
 console.log(
   "Створіть функцію, яка поверне середню оцінку по усім предметам для переданого студента. Студент №2:",
   getAverageMark(students[1])
 );
-console.log(averageAllMarks);
+//console.log(averageAllMarks);
 
 //3. Створіть функцію, яка повертає інформацію загального виду по переданому студенту (вам знадобиться функція з попереднього завдання). повинна бути виведена інформація: курс, ім'я, середня оцінка.
 function getStudentInfo(student) {
@@ -85,11 +83,9 @@ console.log(
 function getStudentsNames(students) {
   let namesArr = [];
   students.forEach((students) => {
-    let stusentName = students.name;
-    namesArr.push(stusentName);
+    namesArr = [...namesArr, students.name]
   });
-  const sortedNames = namesArr.sort();
-  return sortedNames;
+  return namesArr.sort();
 }
 console.log(
   "Створіть функцію, яка повертає імена студентів у алфавітному порядку:",
