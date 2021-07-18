@@ -8,11 +8,19 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-      <div class="buttons-wrapper">
-          <h1>Зоряні війни</h1>
-          <button class="button" id="get-info-button">Отримати інформацію</button>
-        <div id="characters__items"></div>
-    </div>
+        <div class="main">
+            <h1>Зоряні війни</h1>
+            <div class="buttons-wrapper">
+                <button class="button" id="get-info-button">Отримати інформацію</button>
+                <button class="button" id="show-planets-button">Показати планети</button>
+                <button class="button" id="next-planets-button">next</button>
+            </div>            
+
+            <div class="result">
+                <div id="characters__items"></div>
+                <div id="planets__items"></div>
+            </div>
+        </div>        
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
         <script src="main.js"></script>
     </body>

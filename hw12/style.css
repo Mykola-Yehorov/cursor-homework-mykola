@@ -1,4 +1,4 @@
- .buttons-wrapper{
+ .main{
      width: 100%;
      height: 90vh;
      background: url("img/bg.jpg");
@@ -6,6 +6,14 @@
      background-repeat: no-repeat;
      padding-top: 10vh;
     text-align: center;
+ }
+
+ .result{
+    display: flex;
+     justify-content: center;
+     flex-wrap: wrap;
+     width: 90%;
+     margin: auto;
  }
  .buttons{
      width: 70%;
@@ -38,15 +46,9 @@
      font-family: arial;
  }
 
- #characters__items{
-     display: flex;
-     flex-wrap: wrap;
-     width: 90%;
-     margin: auto;
- }
-
-.characters__item{
-    width: 250px;
+.characters__item,
+.planets__item{
+    width: 245px;
     background-color: rgba(0, 0, 0, 0.8);
     color: white;
     margin: 0 20px 20px 0;
