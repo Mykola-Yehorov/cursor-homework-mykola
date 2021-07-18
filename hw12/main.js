@@ -5,11 +5,7 @@ const images = [{
 {
   name: 'Luke Skywalker',
   image: 'img/luke-skywalker.jpg'
-}
-
-
-
-]
+}]
 
 const result = document.querySelector('.result');
 
@@ -28,7 +24,7 @@ getInfoButton.addEventListener ('click', () => {
             const birth = people.data.birth_year;
             const gender = people.data.gender; 
 
-            const characterImage = images.find(img => img.id === character.id);            
+            const characterImage = images.find(img => img.name === character.name);            
 
             result.insertAdjacentHTML('beforeend', `<div class="characters__item">
             <div class="characters__item-name">${name}</div> 
