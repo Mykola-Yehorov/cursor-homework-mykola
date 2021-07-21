@@ -1,5 +1,3 @@
-const marks = [5, 4, 4, 5];
-
 //Функція, яка рахує середнє арифметичне всіх переданих в неї аргументів та округлює значення до сотих
 function getAverage(...numbers) {
   let numbersSum = 0;
@@ -13,6 +11,7 @@ function getAverage(...numbers) {
 
 class Student {
   constructor(university, course, fullName) {
+    const marks = [5, 4, 4, 5];
     this.university = university;
     this.course = course;
     this.fullName = fullName;
