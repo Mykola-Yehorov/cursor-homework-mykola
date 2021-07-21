@@ -37,11 +37,11 @@ class Student {
   }
 
   dismiss() {
-    return (this.isDismissed = true);
+    this.isDismissed = true;
   }
 
   recover() {
-    return (this.isDismissed = false);
+    this.isDismissed = false;
   }
 }
 console.log(
