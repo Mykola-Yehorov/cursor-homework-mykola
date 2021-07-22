@@ -69,10 +69,9 @@ const result = document.querySelector(".result");
 
 const getInfoButton = document.querySelector("#get-info-button");
 getInfoButton.addEventListener("click", () => {
-  clean();
-
-  axios.get(`https://swapi.dev/api/films/2`).then((res) => {
+  clean();  
     try{
+      axios.get(`https://swapi.dev/api/films/2`).then((res) => {
       const characters = res.data.characters;
     characters.forEach((character) => {
       axios.get(`${character}`).then((people) => {
@@ -92,10 +91,11 @@ getInfoButton.addEventListener("click", () => {
         );
       });
     });
+  });
      }catch(err){
       alert("Ошибка!");
      }
-  });
+  
 });
 
 function clean() {
@@ -104,24 +104,28 @@ function clean() {
   }
 }
 
-function showPlanets(n) {
+function showPlanets(n) 
+{
   clean();
-    axios.get(`https://swapi.dev/api/planets/?page=${n}`).then((res) => {
-      try {
+  try 
+  {
+    axios.get(`https://swapi.dev/api/planets/?page=${n}`).then((res) => 
+    {      
       const planets = res.data.results;
       console.log(planets);
-      planets.forEach((planet) => {
+      planets.forEach((planet) => 
+      {
         result.insertAdjacentHTML(
           "beforeend",
           `<div class="planets__item">
-        ${planet.name}</div>`
-        );
+        ${planet.name}</div>`);
         console.log(planet.name);
       });
-    } catch (err) {
-      alert("Ошибка!");
-    }
-  });  
+    }); 
+  }
+  catch (err) {
+      alert("Ошибка!");   
+  }
 }
 
 const nextPlanetsButton = document.querySelector("#next-planets-button");
