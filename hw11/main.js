@@ -16,7 +16,7 @@ async function getRandomChinese(length) {
         const string = (String.fromCharCode(sign));
         resolve (string);
         i++;
-        }, 50);        
+        }, i*50);        
     });
     chineseString = chineseString + await randomChinese;   
   }
