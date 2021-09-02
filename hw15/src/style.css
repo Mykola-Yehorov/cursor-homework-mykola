@@ -1,0 +1,85 @@
+.wrapper{
+  width: 100%;
+  height: 100%;
+  min-height: 850px;
+  background: url("/src/img/bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-top: 10vh;
+ text-align: center;
+ font-family: Arial;
+}
+.items{
+  width: 60%;
+  margin: 0 auto 35px;
+  display: flex;
+  justify-content: space-between;
+}
+.items-box{
+  justify-content: center;
+}
+.item{
+  width: 310px;
+  height: 120px;
+  text-align: center;
+  color: #fff;
+  font-size: 20px;
+  line-height: 20px;
+  font-weight: 600;
+}
+.item-box{
+  width: 600px;
+  display: flex;
+  justify-content: space-between;
+}
+.button{
+  width: 200px;
+  height: 70px;
+  margin-left: 30px;
+  margin-bottom: 20px;
+  border: 0;
+  background-color: rgba(255, 255, 255, 0.9);
+  font-size: 18px;
+  font-family: arial;
+  font-weight: normal;
+  transition: all 0.3s ease;
+  color: #000;
+}
+.button:hover{
+  cursor: pointer;
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.active{
+  outline: 1px;
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+}
+.button__word{
+  display: block;
+  font-weight: bold;
+}
+.output{
+  margin-bottom: 10px;
+  width: 310px;
+}
+h1{
+  font-size: 40px;
+  font-weight: 600;
+  color: white;
+  font-family: arial;
+}
+
+/*hw-9*/
+  .box-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+

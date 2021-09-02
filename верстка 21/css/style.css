@@ -1,0 +1,94 @@
+.card{
+    background-color: #121212;
+    width: 300px;
+    padding: 55px 50px 55px;
+    margin: 0 auto 50px;
+    color: #dfdfdf;
+    text-align: center;
+}
+.card__img-wrapper{
+    background-color: #f48fb2;
+    border-radius: 50%;
+    width: 33px;
+    height: 33px;
+    margin: 0 auto 10px;
+    
+}
+
+.card__img{
+    height: 18px;
+    padding: 7px;
+}
+
+.card__form{
+    text-align: left;
+}
+
+.card__form-input{
+    width: 100%;
+    background: transparent;
+    padding: 10px 15px;
+    border: 1px solid #878787;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    color: #dfdfdf;
+}
+
+.card__title{
+    margin-bottom: 15px;
+}
+
+.card__button{
+    width: 100%;
+    background-color: #90caf9;
+    color: #121212;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: 700;
+    padding: 7px 15px;
+    margin-top: 20px;
+    transition: all .5s;
+}
+
+.card__button:hover{
+    cursor: pointer;
+    background-color: #5fb4ff;
+}
+
+.card__links-signin{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.card__links-signup{
+    text-align: right;
+    margin-top: 15px;
+}
+
+.card__form-name{
+    display: flex;
+    justify-content: space-between;
+}
+
+.card__form-input-name{
+    width: 50%;
+}
+.card__form-input-name:first-child{
+    margin-right: 10px;
+}
+
+
+
+
+.card__link{
+    color: #90caf9;
+    font-size: 12px;
+    text-decoration: none
+}
+
+.card__copyright{
+    font-size: 12px;
+    margin-top: 40px;
+}

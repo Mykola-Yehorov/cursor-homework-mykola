@@ -10,7 +10,8 @@ function* createIdGenerator() {
 
 const idGenerator = createIdGenerator();
 console.log ('Завдання 1:Створіть нескінченний генератор ідентифікаторів:');
-console.log (idGenerator.next().value);
+const a = (idGenerator.next().value);
+console.log ('a' + a);
 console.log (idGenerator.next().value);
 console.log (idGenerator.next().value);
 console.log (idGenerator.next().value);

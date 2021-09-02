@@ -23,4 +23,6 @@ async function getRandomChinese(length) {
   return chineseString;
 }
 
+console.log (getRandomChinese(lengthString).then);
+
 getRandomChinese(lengthString).then(console.log);

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="card">
+    <div class="card__top">
+      <div class="card__img-wrapper">
+        <img class="card__img" src="img/padlock.svg" alt="">
+      </div>
+      <h1 class="card__title">Sign in</h1>
+    </div>
+    <div class="card__form">
+      <input class="card__form-input" type="search" className="input" placeholder="Email Address *"></input>
+      <input class="card__form-input" type="search" className="input" placeholder="Password *"></input>
+      <input class="card__form-checkbox" type="checkbox" name="male" value="male" checked={isChecked[0]} onChange={handlerCheckBoxes}>Remember me</input>
+      <button class="card__button">SIGN IN</button>
+      <div class="card__links card__links-signin">
+        <a class="card__link" href="">Forgot password?</a>
+        <a class="card__link" href="">Don't have an account? Sign Up?</a>
+      </div>
+    </div>
+    <div class="card__copyright">Copyright © Your Website 2021</div>
+  </div>
+
+  <div class="card">
+    <div class="card__top">
+      <div class="card__img-wrapper">
+        <img class="card__img" src="img/padlock.svg" alt="">
+      </div>
+      <h1 class="card__title">Sign up</h1>
+    </div>
+    <div class="card__form">
+      <div class="card__form-name">
+        <input class="card__form-input card__form-input-name" type="search" className="input" placeholder="First Name *"></input>
+        <input class="card__form-input card__form-input-name" type="search" className="input" placeholder="Last Name *"></input>
+      </div>      
+      <input class="card__form-input" type="search" className="input" placeholder="Email Address *"></input>
+      <input class="card__form-input" type="search" className="input" placeholder="Password *"></input>
+      <input class="card__form-checkbox" type="checkbox" name="male" value="male" checked={isChecked[0]} onChange={handlerCheckBoxes}>I want to receive inspiration, marketing promotions and updates via email.</input>
+      <button class="card__button">SIGN UP</button>
+      <div class="card__links card__links-signup">
+        <a class="card__link" href="">Already have an account? Sign in</a>
+      </div>
+    </div>
+    <div class="card__copyright">Copyright © Your Website 2021</div>
+  </div>
+
+
+  <script src="js/main.js"></script>
+</body>
+</html>

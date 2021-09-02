@@ -52,7 +52,10 @@ const ostap = new Student(
   "1",
   "Остап Родоманський Бендер"
 );
+console.log("ostap" + ostap);
 console.log(ostap.getInfo());
+const newName = ostap.getInfo();
+console.log("newName" + newName);
 
 console.log(
   "3. Створіть геттер оцінок this.marks, який повертає масив оцінок студента:"
